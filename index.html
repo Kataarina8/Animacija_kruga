@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animacija kruga</title>
+    <style>
+                body {
+            background-color: #050210; 
+            margin: 0;
+            height: 100vh; 
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+        }
+        .outer-circle {
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(0deg, #fb5dad, #55fb9f, #b97aff);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: rotate 1s linear infinite;
+            box-shadow: 0 0 15px 8px rgba(251, 93, 173, 0.4), 0 0 15px 16px rgba(85, 251, 159, 0.4), 0 0 15px 24px rgba(185, 122, 255, 0.4);
+
+        }
+
+        .inner-circle {
+            width: 430px;
+            height: 430px;
+            background-color: black;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .growing-circle {
+            width: 0px;          
+            height: 0px;         
+            background-color: #0e0e0f; 
+            border-radius: 50%; 
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: grow 1s linear infinite; 
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotate-glow {
+            0% {
+                box-shadow: 0 0 15px 8px rgba(251, 93, 173, 0.4), 0 0 15px 16px rgba(85, 251, 159, 0.4), 0 0 15px 24px rgba(185, 122, 255, 0.4);
+            }
+            100% {
+                box-shadow: 0 0 15px 8px rgba(251, 93, 173, 0.4), 0 0 15px 16px rgba(85, 251, 159, 0.4), 0 0 15px 24px rgba(185, 122, 255, 0.4);
+            }
+        }
+
+        @keyframes grow {
+            0% {
+                width: 0px;   
+                height: 0px;
+            }
+            50% {
+                width: 0px;   
+                height: 0px;
+            }
+            100% {
+                width: 400px;  
+                height: 400px;
+            }
+        }
+
+    
+
+        
+    </style>
+
+</head>
+<body>
+    <div class="outer-circle">
+        <div class="inner-circle">
+            <div class="growing-circle"></div>
+        </div>
+    </div>
+</body>
+</html>
